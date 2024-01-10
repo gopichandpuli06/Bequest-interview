@@ -23,7 +23,7 @@ function App() {
         setData(data);
         setHash(hash);
       } else {
-        console.error("Data integrity check failed. Possible tampering!");
+        console.error("Data integrity check fail. Data tampering!");
       }
     }catch(e){
       setMessage("Fetch Data Error : "+e);
@@ -69,7 +69,7 @@ function App() {
         console.log("Data is untampered.");
         setMessage("verified Data : "+currentData);
       } else {
-        console.error("Data integrity check failed. Possible tampering!");
+        console.error("Data integrity check fail. Data tampering!");
         setMessage("Failed Integrity Check");
       }
     }catch(e){
