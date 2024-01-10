@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import crypto from "crypto-js";
 
 const API_URL = "http://localhost:8080";
-const SECRET_KEY = "yourSecretKey";
+const SECRET_KEY = "SecretKey";
 
 function App() {
   const [data, setData] = useState<string>();
@@ -17,7 +17,7 @@ function App() {
     try{
       const response = await fetch(API_URL);
       const { data, hash } = await response.json();
-    // Decrypt the hash
+    // Decrypt the encryptedhash
       const decryptedHash = decryptHash(hash);
       if (decryptedHash === calculateHash(data)) {
         setData(data);

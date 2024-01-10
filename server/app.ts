@@ -9,7 +9,7 @@ const initialData = "";
 const initialHash = calculateHash(initialData);
 const database = { data: initialData, hash: initialHash };
 
-// Configure Winston logger
+// configure logger
 const logger = winston.createLogger({
   level: 'info',
   format: winston.format.combine(
@@ -42,6 +42,7 @@ app.listen(PORT, () => {
   console.log("Server running on port " + PORT);
 });
 
+//for inital start of the server to have a value in the hash key
 function calculateHash(data: string) {
   return crypto.SHA256(data).toString();
 }
